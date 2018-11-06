@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/LLyy6161/spring-cloud-config      # 配置Git仓库的地址
+          username: liuyi@coracle.com                                                        # Git仓库的账号
+          password: LLyy123456789                                                        # Git仓库的密码
+    bus:
+      trace:
+        enabled: true     # 开启cloud bus的跟踪
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: guest
+    password: guest

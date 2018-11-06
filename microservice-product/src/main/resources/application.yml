@@ -1,0 +1,43 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: microservice-product
+  datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8
+        username: root
+        password: 123456
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+
+
+FTP_URL: 47.98.191.46
+FTP_USERNAME: ftpuser
+FTP_PASSWORD: 123456
+FTP_PATH: /home/ftpuser/www/images
+FTP_PORT: 21
+NGINX_URL: http://47.98.191.46:8000/images/
